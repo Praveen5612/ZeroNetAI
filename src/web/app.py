@@ -36,5 +36,11 @@ class WebInterface:
             
             return jsonify({'response': response})
             
-    def run(self, host='0.0.0.0', port=5000):
-        self.socketio.run(self.app, host=host, port=port, allow_unsafe_werkzeug=True)
+    def run(self, host='0.0.0.0', port=None):
+        """Run the web interface"""
+        port = int(os.environ.get('PORT', 5000))
+        if os.environ.get('ENVIRONMENT') == 'production':
+            from waitress import serve
+            serve(self.app, host=host, port=port)
+        else:
+            self.app.run(host=host, port=port, debug=True)

@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: zeronetai
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python src/web/app.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.8.0
