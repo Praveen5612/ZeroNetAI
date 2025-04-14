@@ -1,0 +1,66 @@
+# ZeroNetAI - Offline AI Assistant
+
+An intelligent AI assistant that runs locally on your machine, featuring optimized model management and a web interface.
+
+## Features
+
+- Local LLM (Large Language Model) processing
+- Web-based chat interface
+- GPU acceleration support
+- Advanced model optimizations
+- Conversation history storage
+- Memory-efficient processing
+
+
+## Technical Details
+
+### Model
+- Base Model: TinyLlama-1.1B-Chat-v1.0
+- Optimizations:
+  - FP16 precision (GPU)
+  - Gradient checkpointing
+  - Model parallelization
+  - Memory management
+  - Response optimization
+
+### System Requirements
+- Python 3.8+
+- CUDA-compatible GPU (optional)
+- 8GB RAM minimum
+- 10GB storage space
+
+## Setup Instructions
+
+1. Clone the repository:
+```bash
+git clone https://github.com/Praveen5612/ZeroNetAI
+cd ZeroNetAI
+
+
+
+## Features in Detail
+### Model Manager
+- Automatic device detection (CPU/GPU)
+- Dynamic memory management
+- Optimized response generation
+- Error handling and recovery
+- Performance monitoring
+### Web Interface
+- Real-time chat interface
+- Response streaming
+- Error handling
+- Session management
+- Responsive design
+### Database
+- Conversation history storage
+- Session tracking
+- Performance metrics
+- Error logging
+## Contributing
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
