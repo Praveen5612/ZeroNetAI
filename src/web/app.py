@@ -40,7 +40,16 @@ class WebInterface:
         """Run the web interface"""
         port = int(os.environ.get('PORT', 5000))
         if os.environ.get('ENVIRONMENT') == 'production':
-            from waitress import serve
-            serve(self.app, host=host, port=port)
+            # Use Gunicorn in production (Render)
+            import gunicorn
+            options = {
+                'bind': f'{host}:{port}',
+                'workers': 4,
+                'worker_class': 'eventlet',
+                'timeout': 120
+            }
+            gunicorn.run(self.app, **options)
         else:
+            # Use Flask's built-in server for development
             self.app.run(host=host, port=port, debug=True)
+        self.socketio.run(self.app, host=host, port=port, debug=True)
